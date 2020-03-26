@@ -1,0 +1,34 @@
+{
+  "name": "gpa-calculator-usp",
+  "version": "1.0.0",
+  "description": "GPA Calculator from USP transcript of records",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FbFDestro/GPA-Calculator-USP.git"
+  },
+  "keywords": [
+    "gpa",
+    "calulator",
+    "gpa",
+    "gpa",
+    "usp",
+    "caluladora",
+    "gpa"
+  ],
+  "author": "Fabio F. Destro",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FbFDestro/GPA-Calculator-USP/issues"
+  },
+  "homepage": "https://github.com/FbFDestro/GPA-Calculator-USP#readme",
+  "dependencies": {
+    "pdfreader": "^1.0.6"
+  }
+}
