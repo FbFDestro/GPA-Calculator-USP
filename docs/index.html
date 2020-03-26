@@ -7,13 +7,40 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <form action="#" onsubmit="calculateGPA()">
-      <textarea>
-Copie e cole todas as disciplinas cursadas em cada semestre, diretamente de seu histórico escolar (uma matéria por linha) </textarea
-      >
-      <input type="submit" value="Calcular" />
-    </form>
-    <h1>Sua GPA é: <span id="gpaResult"></span></h1>
+    <header><h1>Calculadora de GPA para alunos da USP</h1></header>
+
+    <main>
+      <form onsubmit="calculateGPA()">
+        <textarea>
+Copie e cole todas as disciplinas cursadas em cada semestre, diretamente de seu histórico escolar (uma matéria por linha)</textarea
+        >
+        <button type="button" id="btnSubmit">Calcular</button>
+      </form>
+      <div id="result" class="hidden">
+        <h1>Sua GPA é:</h1>
+        <span id="gpaResult"></span>
+      </div>
+
+      <div id="imgComoCalcular">
+        <img src="/como_calcular_GPA_USP.gif" alt="Como calular GPA USP" />
+      </div>
+    </main>
+
+    <footer>
+      <p>
+        Criado por Fabio F. Destro - <a href="https://github.com/FbFDestro/">Github</a> -
+        <a href="https://github.com/FbFDestro/GPA-Calculator-USP">Código fonte</a>
+      </p>
+      <p>
+        Este não é um site oficial! O calculo da GPA utilizou como base
+        <a
+          href="https://blogdointercambio.stb.com.br/gpa-o-que-e-e-como-calcular/"
+          target="_blank"
+          >nesse artigo</a
+        >
+      </p>
+    </footer>
+
     <script src="code.js"></script>
   </body>
 </html>

@@ -1,3 +1,5 @@
+document.getElementById('btnSubmit').onclick = calculateGPA;
+
 function hasWorkLoad(courseData, numberElements) {
   return !isNaN(parseInt(courseData[numberElements - 5]));
 }
@@ -28,8 +30,13 @@ function calculateGPA() {
   let sumPoints = 0;
   let totalNumberOfCredits = 0;
 
+  let possibleLineErro = false;
   for (course of courses) {
     const courseData = course.split(' ');
+
+    if (courseData[0].length != 7) {
+      possibleLineErro = true;
+    }
 
     const numberElements = courseData.length - 1;
     const grade = parseFloat(courseData[numberElements - 1]);
@@ -48,7 +55,16 @@ function calculateGPA() {
     totalNumberOfCredits += credits;
   }
 
-  const gpa = sumPoints / totalNumberOfCredits;
+  let gpa = sumPoints / totalNumberOfCredits;
   const spanResult = document.getElementById('gpaResult');
+  if (!gpa || isNaN(gpa)) {
+    gpa =
+      'Algo deu errado. Verifique os valores inseridos!' +
+      (possibleLineErro
+        ? ' Verifique se cada linha contém as informações de uma matéria!'
+        : '');
+  }
   spanResult.innerText = gpa;
+  document.getElementById('result').classList.remove('hidden');
+  return false;
 }
