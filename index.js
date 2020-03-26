@@ -6,15 +6,25 @@ function somethingWentWrong(err) {
 }
 function endOfPdf() {
   console.log('End of file -- SUCCESS');
+  console.log(pdfText);
 }
 
+function parsePdf(pdfText) {
+  const itens = pdfText.split(
+    '_________________________________________________________________________________________'
+  );
+  console.log(itens);
+}
+
+let pdfText = '';
 new pdfreader.PdfReader().parseFileItems('historicoescolarListar.pdf', function(
   err,
   item
 ) {
   if (err) somethingWentWrong(err);
   else if (!item) endOfPdf();
-  else if (item.text) console.log(item.text);
+  else if (item.text) console.log(item);
+  // pdfText += item.text + '\n';
 });
 
 // alternative https://www.npmjs.com/package/pdf-parse
